@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>プロフィール</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="プロフィール">
+<meta name="keywords" content="物理学,映画,写真,ファッション,音楽">
+<title>profile</title>
+<style type="text/css">
+
+
+    body,html {width: 100%;height: 100%;}
+    body {
+        margin: 0px;
+        padding: 0px;
+        color: #623e2c;	
+        font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+        font-size: clamp(8px, 1.3vw, 20px);	
+        font-weight:400;
+        line-height: 2.2;		
+        background: #623e2c;
+        -webkit-text-size-adjust: none;
+        line-height: clamp(12px, 3vw, 24px);
+    }
+    h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size:100%;}
+    ul {list-style-type: none;}
+    ol {padding-left: 40px;padding-bottom: 15px;}
+    img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+    table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+    iframe {width: 100%;}
+
+    h1 {
+        font-size: clamp(15px, 7vw, 40px);
+        background-color: #ffffff;
+        color: #8d6548;
+        padding: 8px 14px;
+        text-align: center;
+        font-weight: bolder;
+        margin-top: 3%;
+        margin-bottom: 5%;
+        width: 30%;
+
+    }
+
+
+    a {
+	    color: #32ad02;	
+	    transition: 0.4s;	
+    }
+    .ol {
+        border: 2px solid #F3F3F3;
+        padding: 14px 14px 14px 32px;
+    }
+    header {
+        width: 100%;height: 100%;overflow: hidden;position: relative;
+	    background: #27292e url(http://drive.google.com/uc?export=view&id=1QMsVpDEFCyjQtefRGZb8y9TCShk7yNZw) no-repeat center center / cover;	
+        display: flex
+    }
+    header h1 {
+        position:fixed;
+            top: 0px;	
+            width: 100%;
+            text-align: center;		
+            background: #99918b;	
+            background: rgba(255, 255, 255, 0.5);	
+            color: #7e3f00;	
+            font-weight: bold;
+            letter-spacing: 0.3em;	
+            font-size: clamp(8px, 4vw, 30px);		
+            z-index: 10;
+    }
+    header a {	
+    text-decoration: none;
+    color: #272222;
+    }
+    header nav {
+    margin-top: 0px;
+    align-content: center;
+    }
+    header nav ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    }
+    header nav ul li {
+    margin: 0 0 0 10px;
+    font-size: clamp(8px, 2.3vw, 15px);
+    font-weight: bolder;
+    text-indent: 2px;
+    text-align: center;
+    letter-spacing: 1px;
+    }
+
+    .inner {
+        background-color: #ffffff;
+        z-index: 5;
+        margin: 4vw 4vw 4vw 4vw;
+        width: 80vw;
+        overflow: hidden;
+        max-width: 1400px;	
+        padding: 50px 10%;	
+    }
+
+    .bg1 {
+        background: #ff8f3423;	
+        background: #000 url(http://drive.google.com/uc?export=view&id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;
+    }
+    .bg2 {
+        background: #000 url(http://drive.google.com/uc?export=view&id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;	
+        color: rgb(255, 255, 255) !important;	
+        font-weight:200;
+    }
+    .bg2 a {
+        color: rgba(255, 208, 106, 0.856) !important;	
+    }
+
+    .bg3 {
+        background: #000 url(https://drive.google.com/uc?id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center;	
+        background: #000 url(https://drive.google.com/uc?id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;	
+        color: rgb(255, 255, 255) !important;	
+        font-weight:200;
+    }
+
+    .bg4 {
+        background: #ff8f3423;
+    }
+
+    .bg5 {
+        background: #000 url(https://drive.google.com/uc?id=15ZKS4gRe5MQPThTOlN12T8hMjqVU8Dtf) no-repeat center center / cover;
+    }
+
+
+    .contents section + section {
+        margin-top: 20px;	
+    }
+
+
+    .ta1, .ta1 td, .ta1 th {
+        padding: 5px;	
+    }
+    .ta1 th {
+        width: 100px;
+    }
+
+    .ws,.wl {width: 94%;}
+    .big1 {font-size: 16px;}
+
+    .contents{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .contents h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 50vw;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-block-start: 5%;
+        margin-bottom: 5%;
+        padding-top: 5%;
+        font-size: clamp(10px, 2vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:12vh 0 12vh;
+    }
+    .contents h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contents h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contents h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contents h2 span {
+        display: block;
+        font-size: 60%;
+        letter-spacing: 1px;
+    }
+    
+    .contents h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        padding: 0 10px;	
+    }
+    
+    .contents p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contents p + p {
+        margin-top: -20px;
+    }
+    .contents section + section {
+        margin-top: 50px;	
+    }
+
+
+    .contentsr{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contentsr h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 40vw;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 0%;
+        margin-block-start: 0%;
+        margin-bottom: 0%;	
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:12vh 0 12vh;
+    }
+    .contentsr h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contentsr h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contentsr h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contentsr h2 span {
+        display: block;
+        font-size: 60%;	
+        letter-spacing: 1px;
+    }
+    
+    .contentsr h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
+    }
+    
+    .contentsr p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contentsr p + p {
+        margin-top: -20px;
+    }
+    .contentsr section + section {
+        margin-top: 50px;	
+    }
+    
+
+    .main {
+    padding-top: 50px;
+    overflow: auto;
+    }
+    
+    .footer {
+    position:inherit;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    }
+
+
+
+
+    @media screen and (max-width:800px){
+    .inner {
+        padding: 50px 3%;	
+    }
+
+    body.s-n #sub,body.s-n #footermenu,.m-n {display: none;}
+    .big1 {font-size: 20px;}
+    .fl {float: none;}
+    .fr {float: none;}
+    .sh {display:block;}
+    .pc {display:none;}
+
+    .contents{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contents h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 70vw;
+        height: auto;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-block-start: 5%;
+        margin-bottom: 0%;	
+        padding-top: 5%;
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:2.5vh 0 2.5vh;
+    }
+    .contents h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contents h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contents h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contents h2 span {
+        display: block;
+        font-size: 60%;	
+        letter-spacing: 1px;
+    }
+    
+    .contents h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
+    }
+    
+    .contents p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contents p + p {
+        margin-top: -20px;
+    }
+    .contents section + section {
+        margin-top: 50px;	
+    }
+
+    .contentsr{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contentsr h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 70vw;
+        height: auto;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-block-start: 0%;
+        margin-bottom: 0%;	
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:2.5vh 0 2.5vh;
+    }
+    .contentsr h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contentsr h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contentsr h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contentsr h2 span {
+        display: block;
+        font-size: 60%;	
+        letter-spacing: 1px;
+    }
+    
+    .contentsr h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
+    }
+    
+    .contentsr p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contentsr p + p {
+        margin-top: -20px;
+    }
+    .contentsr section + section {
+        margin-top: 50px;	
+    }
+    }
+
+    @media screen and (max-width:420px){
+
+    body {
+        font-size: 12px;	
+        line-height: 1.5;	/*行間*/
+    }
+
+    .inner {
+        padding: 30px 0%;	
+    }
+
+    .ta1, .ta1 td, .ta1 th {
+        padding: 5px;
+    }
+    .ta1 th {
+        width: 100px;
+    }
+
+    .ws,.wl {width: 94%;}
+    .big1 {font-size: 16px;}
+    }
+
+    .items{
+        display: flex;
+    }
+    .item {
+        width: 40%;
+        background-color: #ffffff;
+        align-items: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+    .item h3{
+        text-align: center;
+        font-size: 2vw;
+    }
+    .item img{
+        width: 80%;
+        margin: 10% 10% 5% 10%;
+    }
+    .wrap h2{
+        background-color: #ffffff;
+        width: 50%;
+        padding: 5% 5%;
+        margin-left: 20%;
+        margin-bottom: 3%;
+        margin-top: 5%;
+        font-size: 4vw;
+    }
+
+    </style>
+</head>
+
+
+<body>
+<header>
+<h1>
+    <a href="home.html">Yuki Arai</a>
+    <nav >
+        <ul>
+            <li><a href="home.html#news">Recent events</a></li>
+            <li><a href="home.html#about">Profile</a></li>
+            <li><a href="home.html#gallery">Photos</a></li>
+            <li><a href="home.html#link">Link</a></li>
+            <li><a href="home.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</h1>
+</header>
+
+<div class="contents" id="top">
+    <h2>雑多な記録<span>レポート、知見、戯れ言</span></h2>
+    <div class="inner">
+        <h3>目次</h3>
+        <p><ul>
+            <li>・<a href="#report">レポート</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="contents bg4" id="report">
+    <h2>レポート<span></span></h2>
+	<div class="inner">
+        <p><a href="#top">トップに戻る</a></p>
+        <h3>ロトカヴォルテラ方程式について</h3>
+        <p><a href="https://github.com/YukiArai-41755/ODE-in-Python/blob/master/LotkaVolterra.ipynb">githubに載せたjupyter notebook</a><br>
+            （大したことは書いていないが、初めてのオブジェクト指向プログラミングとして）</p>
+        <p><a href="#top">トップに戻る</a></p>
+    </div>
+</div>
+
+<div class="footer">
+    <span>&copy; 2022 Yuki Arai</span>
+</div>
+</body>
+</html>
