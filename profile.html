@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>プロフィール</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="プロフィール">
+<meta name="keywords" content="物理学,映画,写真,ファッション,音楽">
+<title>profile</title>
+<style type="text/css">
+
+
+    body,html {width: 100%;height: 100%;}
+    body {
+        margin: 0px;
+        padding: 0px;
+        color: #623e2c;	
+        font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
+        font-size: clamp(8px, 1.3vw, 20px);	
+        font-weight:400;
+        line-height: 2.2;		
+        background: #623e2c;
+        -webkit-text-size-adjust: none;
+        line-height: clamp(12px, 3vw, 24px);
+    }
+    h2,h3,h4,h5,p,ul,ol,li,dl,dt,dd,form,figure,form {margin: 0px;padding: 0px;font-size:100%;}
+    ul {list-style-type: none;}
+    ol {padding-left: 40px;padding-bottom: 15px;}
+    img {border: none;max-width: 100%;height: auto;vertical-align: middle;}
+    table {border-collapse:collapse;font-size: 100%;border-spacing: 0;}
+    iframe {width: 100%;}
+
+    h1 {
+        font-size: clamp(15px, 7vw, 40px);
+        background-color: #ffffff;
+        color: #8d6548;
+        padding: 8px 14px;
+        text-align: center;
+        font-weight: bolder;
+        margin-top: 3%;
+        margin-bottom: 5%;
+        width: 30%;
+
+    }
+
+
+    a {
+	    color: #32ad02;	
+	    transition: 0.4s;	
+    }
+    .ol {
+        border: 2px solid #F3F3F3;
+        padding: 14px 14px 14px 32px;
+    }
+    header {
+        width: 100%;height: 100%;overflow: hidden;position: relative;
+	    background: #27292e url(http://drive.google.com/uc?export=view&id=1QMsVpDEFCyjQtefRGZb8y9TCShk7yNZw) no-repeat center center / cover;	
+        display: flex
+    }
+    header h1 {
+        position:fixed;
+            top: 0px;	
+            width: 100%;
+            text-align: center;		
+            background: #99918b;	
+            background: rgba(255, 255, 255, 0.5);	
+            color: #7e3f00;	
+            font-weight: bold;
+            letter-spacing: 0.3em;	
+            font-size: clamp(8px, 4vw, 30px);		
+            z-index: 10;
+    }
+    header a {	
+    text-decoration: none;
+    color: #272222;
+    }
+    header nav {
+    margin-top: 0px;
+    align-content: center;
+    }
+    header nav ul {
+    list-style: none;
+    display: flex;
+    text-align: center;
+    }
+    header nav ul li {
+    margin: 0 0 0 10px;
+    font-size: clamp(8px, 2.3vw, 15px);
+    font-weight: bolder;
+    text-indent: 2px;
+    text-align: center;
+    letter-spacing: 1px;
+    }
+
+    .inner {
+        background-color: #ffffff;
+        z-index: 5;
+        margin: 4vw 4vw 4vw 4vw;
+        width: 80vw;
+        overflow: hidden;
+        max-width: 1400px;	
+        padding: 50px 10%;	
+    }
+
+    .bg1 {
+        background: #ff8f3423;	
+        background: #000 url(http://drive.google.com/uc?export=view&id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;
+    }
+    .bg2 {
+        background: #000 url(http://drive.google.com/uc?export=view&id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;	
+        color: rgb(255, 255, 255) !important;	
+        font-weight:200;
+    }
+    .bg2 a {
+        color: rgba(255, 208, 106, 0.856) !important;	
+    }
+
+    .bg3 {
+        background: #000 url(https://drive.google.com/uc?id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center;	
+        background: #000 url(https://drive.google.com/uc?id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;	
+        color: rgb(255, 255, 255) !important;	
+        font-weight:200;
+    }
+
+    .bg4 {
+        background: #ff8f3423;
+    }
+
+    .bg5 {
+        background: #000 url(https://drive.google.com/uc?id=15ZKS4gRe5MQPThTOlN12T8hMjqVU8Dtf) no-repeat center center / cover;
+    }
+
+
+    .contents section + section {
+        margin-top: 20px;	
+    }
+
+
+    .ta1, .ta1 td, .ta1 th {
+        padding: 5px;	
+    }
+    .ta1 th {
+        width: 100px;
+    }
+
+    .ws,.wl {width: 94%;}
+    .big1 {font-size: 16px;}
+
+    .contents{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .contents h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 50vw;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-block-start: 5%;
+        margin-bottom: 5%;
+        padding-top: 5%;
+        font-size: clamp(10px, 2vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:12vh 0 12vh;
+    }
+    .contents h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contents h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contents h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contents h2 span {
+        display: block;
+        font-size: 60%;
+        letter-spacing: 1px;
+    }
+    
+    .contents h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        padding: 0 10px;	
+    }
+    
+    .contents p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contents p + p {
+        margin-top: -20px;
+    }
+    .contents section + section {
+        margin-top: 50px;	
+    }
+
+
+    .contentsr{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contentsr h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 40vw;
+        height: auto;
+        margin-left: 5%;
+        margin-right: 0%;
+        margin-block-start: 0%;
+        margin-bottom: 0%;	
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:12vh 0 12vh;
+    }
+    .contentsr h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contentsr h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contentsr h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contentsr h2 span {
+        display: block;
+        font-size: 60%;	
+        letter-spacing: 1px;
+    }
+    
+    .contentsr h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
+    }
+    
+    .contentsr p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contentsr p + p {
+        margin-top: -20px;
+    }
+    .contentsr section + section {
+        margin-top: 50px;	
+    }
+    
+
+    .main {
+    padding-top: 50px;
+    overflow: auto;
+    }
+    
+    .footer {
+    position:inherit;
+    overflow: hidden;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    }
+
+
+
+
+    @media screen and (max-width:800px){
+    .inner {
+        padding: 50px 3%;	
+    }
+
+    body.s-n #sub,body.s-n #footermenu,.m-n {display: none;}
+    .big1 {font-size: 20px;}
+    .fl {float: none;}
+    .fr {float: none;}
+    .sh {display:block;}
+    .pc {display:none;}
+
+    .contents{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contents h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 70vw;
+        height: auto;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-block-start: 5%;
+        margin-bottom: 0%;	
+        padding-top: 5%;
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:2.5vh 0 2.5vh;
+    }
+    .contents h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contents h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contents h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contents h2 span {
+        display: block;
+        font-size: 60%;	
+        letter-spacing: 1px;
+    }
+    
+    .contents h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
+    }
+    
+    .contents p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contents p + p {
+        margin-top: -20px;
+    }
+    .contents section + section {
+        margin-top: 50px;	
+    }
+
+    .contentsr{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .contentsr h2 {
+        clear: both;
+        position: relative;
+        line-height: 1.4;
+        background-color: #ffffff;
+        color: #623e2c;
+        width: 70vw;
+        height: auto;
+        margin-left: 0%;
+        margin-right: 0%;
+        margin-block-start: 0%;
+        margin-bottom: 0%;	
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
+        padding:2.5vh 0 2.5vh;
+    }
+    .contentsr h2::before, h2::after { 
+    content:'';
+    width: clamp(5px, 2vw, 20px);
+    height: clamp(7.5px, 3vw, 30px);
+    position: absolute;
+    }
+    .contentsr h2::before{
+    border-left: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-top: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    top: 25%;
+    left: 10%;
+    }
+    .contentsr h2::after{
+    border-right: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    border-bottom: solid clamp(1.5px, 0.1vw, 3px) #623e2c;
+    right:10%;
+    bottom: 25%;
+    }
+    .contentsr h2 span {
+        display: block;
+        font-size: 60%;	
+        letter-spacing: 1px;
+    }
+    
+    .contentsr h3 {
+        clear: both;
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
+    }
+    
+    .contentsr p {
+        padding: 5vh 10px 0;		
+    }
+    
+    .contentsr p + p {
+        margin-top: -20px;
+    }
+    .contentsr section + section {
+        margin-top: 50px;	
+    }
+    }
+
+    @media screen and (max-width:420px){
+
+    body {
+        font-size: 12px;	
+        line-height: 1.5;	/*行間*/
+    }
+
+    .inner {
+        padding: 30px 0%;	
+    }
+
+    .ta1, .ta1 td, .ta1 th {
+        padding: 5px;
+    }
+    .ta1 th {
+        width: 100px;
+    }
+
+    .ws,.wl {width: 94%;}
+    .big1 {font-size: 16px;}
+    }
+
+    .items{
+        display: flex;
+    }
+    .item {
+        width: 40%;
+        background-color: #ffffff;
+        align-items: center;
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-bottom: 5%;
+    }
+    .item h3{
+        text-align: center;
+        font-size: 2vw;
+    }
+    .item img{
+        width: 80%;
+        margin: 10% 10% 5% 10%;
+    }
+    .wrap h2{
+        background-color: #ffffff;
+        width: 50%;
+        padding: 5% 5%;
+        margin-left: 20%;
+        margin-bottom: 3%;
+        margin-top: 5%;
+        font-size: 4vw;
+    }
+
+    </style>
+</head>
+
+
+<body>
+<header>
+<h1>
+    <a href="home.html">Yuki Arai</a>
+    <nav >
+        <ul>
+            <li><a href="home.html#news">Recent events</a></li>
+            <li><a href="home.html#about">Profile</a></li>
+            <li><a href="home.html#gallery">Photos</a></li>
+            <li><a href="home.html#link">Link</a></li>
+            <li><a href="home.html#contact">Contact</a></li>
+        </ul>
+    </nav>
+</h1>
+</header>
+
+<div class="contents" id="top">
+    <h2>自叙伝的<br>プロフィール<span></span></h2>
+    <div class="inner">
+        <h3>目次</h3>
+        <p><ul>
+            <li>・<a href="#child">幼少期</a></li>
+            <li>・<a href="#junior">中学時代</a></li>
+            <li>・<a href="#junior high">高校時代</a></li>
+            <li>・<a href="#bachelor">大学時代</a></li>
+            <li>・<a href="#graduate">大学院時代</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="contents" id="child">
+    <h2>幼少期<span></span></h2>
+	<div class="inner">
+        <p><a href="#top">トップに戻る</a></p>
+        <p>
+            祖父(自分が中学生か小学校高学年の時に亡くなった)や両親に誕生日の度に図鑑をもらい、図鑑を読み漁ることに熱中していた。
+            特に興味を強く示していたのは、宇宙や大昔の生物(恐竜など)、星座、昆虫だった。逆に、植物図鑑には殆ど興味を示さなかった。
+            (植物図鑑を全く見なかったわけでは無いが、ほぼ記憶に残っていない。)当時の宇宙図鑑には、ブラックホールは本当に存在するのか？
+            など、2022年には当然とされているようなものが未だ不確であるとして掲載されていた。あとは、冥王星が準惑星になった~など。4, 5才頃に
+            それを読んで、小学生時代に改めて読んだとき、宇宙分野での知見が数年の間に相当進歩していることを実感して感動した記憶がある。<br>
+            小学校高学年くらいから、Newtonを購読し始めた。きっかけは通っていた整形外科の本棚にあったものを読んでいて、面白かったから。
+            薄れかけていた科学への興味が復活する。元素図鑑なんかも貰って読んでいたが、K殻とかp軌道などの理解が全く出来なかった記憶がある。
+            両親は（と言うか親戚全員）文系であったので、聞いても解決しなかった。こういう事態は往々にしてあって、Newtonで三角関数についての特集が組まれた
+            ときにも、意味がわからず途方に暮れたと憶えている。
+        </p>
+        <p>
+            母親の影響で本をよく読んでいた。小学生時代の前半は、主に伝記を読んでいた記憶がある。キュリー夫人や野口英世の伝記が印象的であった。今思い出すと、
+            偉大な業績を残してきた物理学者の伝記は殆ど無かった。ボーアとか、フェルミとかの伝記があってもいいと思う。アインシュタインくらいしか知らなかった
+            当時からしたら、物理学へのめり込むきっかけがあまりなかったような気はする。特に物性物理学に関しては、（アインシュタインの功績は物性分野にも及んでいるとはいえ）
+            知るきっかけがなかなか無かった。<br>
+            理系的な本以外の本も多く読んでいた。十五少年漂流記をはじめとして、ミヒャエル・エンデのモモ、アレクサンドル・デュマの三銃士などを小学生低学年で読んだ。
+            印象的だったのはモモであったことは憶えているが、読んでから10年以上も経っているので、時間泥棒から時間を取り戻す的な話であったことくらいしか内容は
+            憶えていない。レミゼも読んだが、長すぎていつも上巻でギブアップしてしまっていた。小学校6年生くらいから、辻村深月の本を読み始め、このブームは中学3年頃まで続いた。
+            凍りの鯨が特に好きな本であった。この人の著作に惹かれた理由は、絶望の書き方に衝撃を受けたからだと思う。殆ど救いようがないけど、僅かに救いを感じながらも墜ちていく様がどの
+            著作でも魅力的だった。（こんな一言で言い表すのも失礼だが。。）
+        </p>
+        <p>
+            学童の先輩に誘われて、小二の頃に地域の少年サッカーチーム(北本石戸サッカー少年団)に入団した。おそらく今は少子化の影響を受けて団員減少、他チームと
+            合併したいるのではないかと思う。小三くらいの頃から、リフティングをひたすら練習していた。小四の終わりには2000回ほど出来たが、それ以上は
+            数えるのが面倒になってしまった。うちの両親は基本的に子どもに対して何か特定のことをやるように促すことはしない方針だったようで、
+            サッカーもやりたいと言わなければやることは無かったと思う。今ではいい思い出だし、運動をすることで健康になれるし、今でも当時培った
+            体力が辛うじて残っているので、やっていて良かったと思う。極論を言えば、もっと数学的素養や科学的視点で者を見る力は、この時期にもっと基盤を
+            作る予知があったかもしれない。（環境の違いってどうしようも無いけど、そこら辺の差を感じてしまう場面はしばしばある。）
+            サッカーはその後中学二年生まで続けた。
+        </p>
+        <p>
+            小学校1年の頃、母親が趣味としているミュージカル鑑賞（ルドルフ）に連れて行ってもらった。帝劇だったかどこだったか完全に忘れてしまったが当時の自分からしたらもの凄くでかいホール
+            だったことは間違いない。物語の内容は今となっては認知しているが、当時は全くもって知らなかったので終始なにかすさまじいものを見せられている、という感覚だった。最後に
+            ルドルフが銃で自殺するシーンは衝撃過ぎて今でも鮮明に憶えている。人の死というものを肌感覚で感じた瞬間は、小学校低学年で言えばこのルドルフの自殺とひいおばあちゃんの死の2つ
+            だったと思う。当時妹が生まれたりしていたので、人は生まれ、死ぬ、という一連の流れを身近に感じた時期でもあった。人の死や生が、実在物には現れない周囲の人の心理に少なからず良くも悪くも
+            影響を与えるということを認知した。俯瞰して捉える感覚は、少なからずこの頃にはあったのだと思う。（俯瞰している自分を俯瞰する、までは行っていないけれど。）生と死の一貫した流れは、
+            人の人生を物語として捉え、人の（特に大人の）話を好んで聞くようになった潜在的な切っ掛けでもあったのではないかと思う。ルドルフの舞台に関しては、もう一つ記憶がある。
+            舞台では、終演後に演者が一堂に会して登場して挨拶する場面があると思うが、そこで観客が全員一斉に立ち上がって拍手をし始めた。慣習としては当たり前なのだが、勿論小学一年生の
+            自分はそんな慣習知らないわけで、母親に立ち上がるように促されて慣習に倣った。当時の自分としては、見知らぬ集団が一斉に同じことをするという奇妙で摩訶不思議な現象だった。世の中
+            には何か慣習、習わしがあってそれに従う自分、を鮮明に認識した習慣だった。そこには従わない、と言う選択肢もあることも少しして理解した。
+        </p>
+        <p><a href="#top">トップに戻る</a></p>
+    </div>
+</div>
+
+<div class="contents bg1" id="junior">
+    <h2>中学時代<span></span></h2>
+    <div class="inner">
+        <p><a href="#top">トップに戻る</a></p>
+        <p>
+            この時期に読んだ本は、小学校時代に引き続いて辻村深月から始まったが、わりとすぐに森博嗣にうつった。切っ掛けは学校の図書館にあったスカイクロラであった。
+            あの表紙ほど印象的な本の表紙は殆ど見たことがない。話の全容が終始なんだかよくわからないまま進んでいく感じは変な感じだったがだからこそ色々読みたくなった。辻村深月から森博嗣
+            にいった感じからしても、なんとなーく心にあった日常に対する虚無感を具象化してくれる何かを求めていたのかもしれないし、そのような虚無感はそれまでに読んできた本によって育てられた
+            ものなのかもしれない。スカイクロラを読んだ後は、そのままシリーズを読んで、四季を読んだ。当時すべてがFになるがドラマになっていたような記憶がある。
+        </p>
+        <p><a href="#top">トップに戻る</a></p>
+    </div>
+</div>
+
+<div class="contents bg4" id="junior high">
+    <h2>高校時代<span></span></h2>
+	<div class="inner">
+        <p><a href="#top">トップに戻る</a></p>
+        <h3>今後執筆予定</h3>
+        <p></p>
+        <p><a href="#top">トップに戻る</a></p>
+    </div>
+</div>
+
+<div class="contents" id="bachelor">
+    <h2>大学時代<span></span></h2>
+	<div class="inner">
+        <p><a href="#top">トップに戻る</a></p>
+        <h3>B1前期</h3>
+        <p>
+            東北大学理学部に入学した。入学の頃にはcovid19が非常に流行り、半年間は完全にオンライン授業で、一度もキャンパスには行かなかった。中には実家で半期を過ごした人たちもいたようである。
+            大学に入ったからにはいい意味で変な人と知り合いたいという気持ちもあり、物理の会という自主ゼミサークルに入った。前期は演習の授業の問題を一緒に解く程度だったが、後期は電磁気学の
+            ゼミと熱力学のゼミをやった。前期は家に引きこもっていたわけだが、このころからもう少し真面目に取り組んでいれば、、という気持ちは多少ある。成績は割と良かったが、何か得たかと言われると
+            怪しい部分が拭えない。だだ、教養の単位用に履修していた機械学習関連の授業は数少ない良い点であったと思う。機械学習にまつわる知識もそうだが、Pythonのコーディングは、下手なりに試行錯誤
+            して動くものを書き上げるという体験をできたという面で大きかった。環境構築に躓かずにコーディングが出来るgoogle colabのようなものがある時代に学生としていられたことはとても幸運だったと思う。
+            物理の面で言うと、物体があるポテンシャルに従って運動しているとき、ポテンシャルをプロットしてその表面が地面であるかのように運動する物体をイメージすると、その位置座標軸への射影が実際の運動
+            であるという理解は高校までにはないものだった。高校までは、問題を解くことに焦点を当てすぎて、殆ど物理学していなかったんだと強く感じた記憶がある。
+        </p>
+        <p><a href="#top">トップに戻る</a></p>
+    </div>
+</div>
+
+<div class="contents" id="graduate">
+    <h2>大学院時代<span></span></h2>
+	<div class="inner">
+        <h3>まだ学部生(2022年現在)</h3>
+        <p>
+        </p>
+    </div>
+</div>
+
+
+<div class="footer">
+    <span>&copy; 2022 Yuki Arai</span>
+</div>
+</body>
+</html>

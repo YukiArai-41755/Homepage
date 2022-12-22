@@ -18,7 +18,7 @@
         padding: 0px;
         color: #623e2c;	/*全体の文字色*/
         font-family: "ヒラギノ丸ゴ Pro", "Hiragino Maru Gothic Pro","ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;	/*フォント種類*/
-        font-size: clamp(8px, 2vw, 20px);	/*文字サイズ*/
+        font-size: clamp(8px, 2vw, 20px);	
         font-weight:400;
         line-height: 2.2;		/*行間*/
         background: #623e2c;	/*背景色*/
@@ -56,8 +56,8 @@
     }
     header {
         width: 100%;height: 100%;overflow: hidden;position: relative;
-	    background: #27292e url(../images/mybg1.jpg) no-repeat center center;	/*背景画像の設定（古いブラウザ用）*/
-	    background: #27292e url(../python関連/images/_9305333.jpg) no-repeat center center / cover;	/*背景画像の設定*/
+	    background: #27292e url(http://drive.google.com/uc?export=view&id=1ke9klpE9V8pbzm6uMVSAxrYxdVCV2RKN) no-repeat center center;	/*背景画像の設定（古いブラウザ用）*/
+	    background: #27292e url(http://drive.google.com/uc?export=view&id=1ke9klpE9V8pbzm6uMVSAxrYxdVCV2RKN) no-repeat center center / cover;	/*背景画像の設定*/
         display: flex;
     }
     header h1 {
@@ -70,7 +70,7 @@
             color: #7e3f00;	/*文字色*/
             font-weight: bold;
             letter-spacing: 0.3em;	/*文字間隔を少し広くとる設定*/
-            font-size: clamp(8px, 4vw, 30px);		/*文字サイズ*/
+            font-size: clamp(8px, 4vw, 30px);		
             z-index: 10;
     }
     header a {	
@@ -95,25 +95,23 @@
     letter-spacing: 1px;
     }
 
-    /*スマホ用メニューを表示させない*/
     #menubar-s {display: none;}
-    /*３本バーアイコンを表示させない*/
     #menubar_hdr {display: none;}
 
-    /*各メニューごとの設定（および、#menu1〜#menu5までのアニメーションの共通設定）*/
     #menubar li {
-        width: clamp(80px, 48vh, 400px);			/*メニュー幅*/
-        animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+        width: clamp(80px, 48vh, 400px);			
+        animation-fill-mode: both;	
         animation-timing-function: ease-in-out;
-        border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	/*写真の縁取り。縁取りの幅、線種、色*/
-        border-style: double;
-        box-shadow: 2px 2px 5px rgba(0,0,0,1);	/*写真の影。0,0,0は黒の事で、0.3は色が30%ついた状態の事。*/
         position: absolute;
-        background: rgb(0, 0, 0,0.6);	/*背景色。下の「@keyframes photo」でのopacityの指定で出る背景色です。#000(黒)でなく#fff(白)にしておけば白っぽく薄く出ます。*/
-        text-align: center;	/*文字をセンタリング*/
+        background: rgb(0, 0, 0,0.6);	
+        text-align: center;
         transition: 0.2s;
+        border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	
+        border-style: double;
+        box-shadow: 2px 2px 5px rgba(0,0,0,1);	
+
     }
-    /*マウスオン時に写真メニューを少しだけ大きくする*/
+   
     #menubar li:hover {
 
         background-color: #000;
@@ -122,66 +120,49 @@
         overflow: hidden;
         
     }
-    /*マウスオン時に出てくるメニュー名　。※下のアニメーション設定にも同じ「#menubar a span」があります。*/
     #menubar a span {
         position: absolute;
-        bottom: 0px;	/*写真の下部に配置*/
+        bottom: 0px;
         left: 0px;
-        width: 100%;		/*幅*/
-        font-size: clamp(8px, 2vw, 10px);	/*文字サイズ*/
-        color:#000000;		/*文字色*/
+        width: 100%;		
+        font-size: clamp(8px, 2vw, 10px);	
+        color:#000000;		
         font-weight: bolder;
-        background: #000;	/*背景色。（古いブラウザ用）*/
-        background: rgba(255, 255, 255, 0.5);	/*背景色。0,0,0は黒の事で0.6は60%色がついた状態の事。*/
+        background: rgba(255, 255, 255, 0.5);	
     }
-    /*マウスオン時に出てくるメニュー名（１行目への追加設定）*/
     #menubar a span::first-line {
-        font-size: clamp(10px, 2vw, 20px);	/*文字サイズを大きく*/
+        font-size: clamp(10px, 2vw, 20px);	
     }
 
-    /*「photo」のアニメーション設定。写真が少しくらい状態から始まって、最後に明るくなるアニメーション。
-    ---------------------------------------------------------------------------*/
     #menubar li a {
         animation-name: photo;	
-        animation-delay: 1s;	/*アニメーションを遅れて実行する指定。「s」は秒の事。*/
-        animation-duration: 1s;	/*アニメーションの実行時間。秒。*/
-        animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+        animation-delay: 1s;	
+        animation-duration: 1s;
+        animation-fill-mode: both;
     }
-    /*アニメーション設定------------------------*/
     @keyframes photo {
-    /*0コマ目*/
     0% {
-        opacity: 0.6;	/*60%写真に色がついた状態。ここでの背景色は上の「#menubar li」の「background: #000;」の黒となるので暗くなります。*/
+        opacity: 0.6;	
     }
-    /*100コマ目*/
     100% {
-        opacity: 1;		/*100%色がでた状態*/
+        opacity: 1;	
     }
     }
 
-    /*「menu-title」のアニメーション設定。※上の一般のcss設定にも同じ「#menubar a span」があります。
-    ---------------------------------------------------------------------------*/
-    /*マウスオン時に出てくるメニュー名*/
     #menubar a span {
         animation-name: menu-title;	
-        animation-delay: 2.5s;		/*アニメーションを遅れて実行する指定。「s」は秒の事。*/
-        animation-duration: 0.7S;	/*アニメーションの実行時間。秒。*/
-        animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+        animation-delay: 2.5s;		
+        animation-duration: 0.7S;	
+        animation-fill-mode: both;	
     }
-    /*アニメーション設定------------------------*/
     @keyframes menu-title {
-    /*0コマ目*/
     0% {
-        opacity: 0;	/*0%色がついた状態。つまり全く見えない状態の事。*/
+        opacity: 0;	
     }
-    /*100コマ目*/
     100% {
-        opacity: 1;	/*100%色がでた状態*/
+        opacity: 1;
     }
     }
-
-    /*menu1
-    ---------------------------------------------------------------------------*/
     #menu1 {
         animation-name: menu1;	
         transform: rotate(-12deg);
@@ -189,8 +170,7 @@
         top: 20%;
         left: 5%;
     }
-    /*menu2
-    ---------------------------------------------------------------------------*/
+
     #menu2 {
         animation-name: menu2;	
         z-index: 3;	
@@ -198,8 +178,7 @@
         right: 35%;
         top: 45%;
     }
-    /*menu3
-    ---------------------------------------------------------------------------*/
+
     #menu3 {
         animation-name: menu3;	
         z-index: 4;	
@@ -208,8 +187,6 @@
         top: 20%;	
     }
 
-    /*menu4
-    ---------------------------------------------------------------------------*/
     #menu4 {
         animation-name: menu4;	
         z-index: 2;	
@@ -218,8 +195,6 @@
         bottom: 10%;
     }
 
-    /*menu5
-    ---------------------------------------------------------------------------*/
     #menu5 {
         animation-name: menu3;	
         z-index: 3;	
@@ -228,59 +203,49 @@
         bottom: 10%;		
     }
 
-    /*inner
-    ---------------------------------------------------------------------------*/
     .inner {
         background-color: #ffffff;
         z-index: 5;
         margin: 4vw 4vw 4vw 4vw;
         width: 50vw;
         overflow: hidden;
-        max-width: 1400px;	/*コンテンツの最大幅*/
-        padding: 50px 10%;	/*上下、左右へのボックス内の余白*/
+        max-width: 1400px;	
+        padding: 50px 10%;	
     }
 
-    /*背景色のスタイルです。contentsとセットで使います。
-    ---------------------------------------------------------------------------*/
-    /*bg1*/
     .bg1 {
-        background: #ff8f3423;	/*背景色のみ*/
-        background: #000 url(../python関連/images/mybg3.jpg) no-repeat center center / cover;	/*背景画像の読み込み*/
+        background: #ff8f3423;	
+        background: #000 url(http://drive.google.com/uc?export=view&id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;	
     }
-    /*bg2（Contactブロックで使用）*/
     .bg2 {
-        background: #000 url(../images/mybg3.jpg) no-repeat center center;	/*背景画像の読み込み（古いブラウザ用）*/
-        background: #000 url(../images/mybg3.jpg) no-repeat center center / cover;	/*背景画像の読み込み*/
-        color: rgb(255, 255, 255) !important;	/*文字色*/
+        background: #000 url(http://drive.google.com/uc?export=view&id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;
+        color: rgb(255, 255, 255) !important;	
         font-weight:200;
     }
     .bg2 a {
-        color: rgba(255, 208, 106, 0.856) !important;	/*リンクテキストの文字色*/
+        color: rgba(255, 208, 106, 0.856) !important;
     }
 
     .bg3 {
-        background: #000 url(../images/mybg3.jpg) no-repeat center center;	/*背景画像の読み込み（古いブラウザ用）*/
-        background: #000 url(../images/mybg3.jpg) no-repeat center center / cover;	/*背景画像の読み込み*/
-        color: rgb(255, 255, 255) !important;	/*文字色*/
+        background: #000 url(https://drive.google.com/uc?id=1kiz0YQj3DXBCIT2cZ2vGs59td4H2Iti3) no-repeat center center / cover;	
+        color: rgb(255, 255, 255) !important;
         font-weight:200;
     }
 
     .bg4 {
-        background: #ff8f3423;	/*背景色のみ*/
+        background: #ff8f3423;
     }
 
     .bg5 {
-        background: #000 url(../python関連/images/山寺の山.jpg) no-repeat center center / cover;
+        background: #000 url(https://drive.google.com/uc?id=15ZKS4gRe5MQPThTOlN12T8hMjqVU8Dtf) no-repeat center center / cover;
     }
-    /*contents 左側に内容を、右側に見出しを。
-    ---------------------------------------------------------------------------*/
+
     .contents{
         display: flex;
         flex-direction: row-reverse;
         justify-content: center;
         align-items: center;
     }
-    /*h2見出し*/
     .contents h2 {
         clear: both;
         position: relative;
@@ -292,11 +257,11 @@
         margin-left: 0%;
         margin-right: 5%;
         margin-block-start: 0%;
-        margin-bottom: 0%;	/*下に空けるスペース*/
-        font-size: clamp(10px, 3vw, 25px);		/*文字サイズ*/
-        text-align: center;		/*文字をセンタリング*/
-        letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
-        line-height: 1.5;		/*行間をデフォルトから少し狭くする*/
+        margin-bottom: 0%;	
+        font-size: clamp(10px, 3vw, 25px);	
+        text-align: center;		
+        letter-spacing: 0.2em;
+        line-height: 1.5;	
         padding:8vh 0 8vh;
     }
     .contents h2::before, h2::after { 
@@ -317,36 +282,27 @@
     right:10%;
     bottom: 10%;
     }
-    /*h2見出し内のspanタグ。小文字表記部分。*/
     .contents h2 span {
         display: block;
-        font-size: 60%;	/*文字サイズ*/
+        font-size: 60%;
         letter-spacing: 1px;
     }
-    /*h3見出し*/
     .contents h3 {
         clear: both;
-        margin-bottom: 20px;	/*下に空けるスペース*/
-        font-size: 20px;		/*文字サイズ*/
-        background: url(../images/line1.png) no-repeat center bottom;	/*背景画像（下線）の読み込み（古いブラウザ用）*/
-        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	/*背景画像（下線）の読み込み。幅は100%、高さを2pxにする。*/
-        padding: 0 10px;	/*上下、左右へのブロック内の余白*/
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        padding: 0 10px;	
     }
-    /*段落タグ*/
     .contents p {
-        padding: 5vh 10px 0;		/*上、左右、下への余白*/
+        padding: 5vh 10px 0;	
     }
-    /*段落タグが続いた場合の設定*/
     .contents p + p {
         margin-top: -20px;
     }
-    /*setionが続いた場合の２つ目のsectionへの設定*/
     .contents section + section {
-        margin-top: 50px;	/*上に空けるスペース*/
+        margin-top: 50px;	
     }
 
-    /*contents right 左側に見出しを、右側に内容を。
-    ---------------------------------------------------------------------------*/
     .contentsr{
         display: flex;
         flex-direction: row;
@@ -354,7 +310,6 @@
         align-items: center;
         margin-top: 5%;
     }
-    /*h2見出し*/
     .contentsr h2 {
         clear: both;
         position: relative;
@@ -367,11 +322,11 @@
         margin-right: 0%;
         margin-block-start: 0%;
         margin-top: 0%;
-        margin-bottom: 0%;	/*下に空けるスペース*/
-        font-size: clamp(10px, 3vw, 25px);		/*文字サイズ*/
-        text-align: center;		/*文字をセンタリング*/
-        letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
-        line-height: 1.5;		/*行間をデフォルトから少し狭くする*/
+        margin-bottom: 0%;	
+        font-size: clamp(10px, 3vw, 25px);		
+        text-align: center;		
+        letter-spacing: 0.2em;	
+        line-height: 1.5;		
         padding:8vh 0 8vh;
     }
     .contentsr h2::before, h2::after { 
@@ -392,39 +347,28 @@
     right:10%;
     bottom: 10%;
     }
-    /*h2見出し内のspanタグ。小文字表記部分。*/
     .contentsr h2 span {
         display: block;
-        font-size: 60%;	/*文字サイズ*/
+        font-size: 60%;	
         letter-spacing: 1px;
     }
-    /*h3見出し*/
     .contentsr h3 {
         clear: both;
-        margin-bottom: 20px;	/*下に空けるスペース*/
+        margin-bottom: 20px;	
         margin-top: 5%;
-        font-size: 20px;		/*文字サイズ*/
-        background: url(../images/line1.png) no-repeat center bottom;	/*背景画像（下線）の読み込み（古いブラウザ用）*/
-        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	/*背景画像（下線）の読み込み。幅は100%、高さを2pxにする。*/
-        padding: 0 10px;	/*上下、左右へのブロック内の余白*/
+        font-size: 20px;		
+        padding: 0 10px;	
     }
-    /*段落タグ*/
     .contentsr p {
-        padding: 5vh 10px 0;		/*上、左右、下への余白*/
+        padding: 5vh 10px 0;		
     }
-    /*段落タグが続いた場合の設定*/
     .contentsr p + p {
         margin-top: -20px;
     }
-    /*setionが続いた場合の２つ目のsectionへの設定*/
     .contentsr section + section {
-        margin-top: 50px;	/*上に空けるスペース*/
+        margin-top: 50px;	
     }
-/*---------------------------------------------------------------------------------*/
-    .main {
-    padding-top: 50px;
-    overflow: auto;
-    }
+
     
     .footer {
     position:inherit;
@@ -435,49 +379,28 @@
     background-color: rgb(255, 255, 255);
     text-align: center;
     }
-    /*「更新情報・お知らせ」ブロック
-    ---------------------------------------------------------------------------*/
-    /*見出しを含まないお知らせブロック*/
-    #new dl {
-        padding: 0 10px;	/*上下、左右へのボックス内の余白*/
-    }
-    /*日付設定*/
-    #new dt {
-        float: left;	/*左に回り込み*/
-        width: 9em;		/*幅*/
-        letter-spacing: 0.1em;	/*文字間隔を少しだけ広くとる設定*/
-    }
-    /*記事設定*/
-    #new dd {
-        padding-left: 9em;	/*左に空ける余白*/
-    }
 
 
 
-    /*画面幅800px以下の設定
-    ------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    @media screen and (max-width:800px){
+
+    @media screen and (max-width:850px){
     #menubar li {
-    width: clamp(80px, 30vh, 400px);			/*メニュー幅*/
-    animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+    width: clamp(60px, 28vw, 200px);		
+    animation-fill-mode: both;
     animation-timing-function: ease-in-out;
-    border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	/*写真の縁取り。縁取りの幅、線種、色*/
+    border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	
     border-style: double;
-    box-shadow: 2px 2px 5px rgba(0,0,0,1);	/*写真の影。0,0,0は黒の事で、0.3は色が30%ついた状態の事。*/
+    box-shadow: 2px 2px 5px rgba(0,0,0,1);	
     position: absolute;
-    background: rgb(0, 0, 0,0.6);	/*背景色。下の「@keyframes photo」でのopacityの指定で出る背景色です。#000(黒)でなく#fff(白)にしておけば白っぽく薄く出ます。*/
-    text-align: center;	/*文字をセンタリング*/
+    background: rgb(0, 0, 0,0.6);	
+    text-align: center;
     transition: 0.2s;
     }
 
-    /*inner
-    ---------------------------------------------------------------------------*/
     .inner {
-        padding: 50px 3%;	/*上下、左右へのボックス内の余白*/
+        padding: 50px 3%;	
     }
 
-    /*その他
-    ---------------------------------------------------------------------------*/
     body.s-n #sub,body.s-n #footermenu,.m-n {display: none;}
     .big1 {font-size: 20px;}
     .fl {float: none;}
@@ -487,81 +410,65 @@
 
     }
 
-    @media screen and (max-width:600px){
+    @media screen and (max-width:750px){
     #menubar li {
-    width: clamp(80px, 30vh, 400px);			/*メニュー幅*/
-    animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+    width: clamp(50px, 28vw, 200px);		
+    animation-fill-mode: both;	
     animation-timing-function: ease-in-out;
-    border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	/*写真の縁取り。縁取りの幅、線種、色*/
+    border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	
     border-style: double;
-    box-shadow: 2px 2px 5px rgba(0,0,0,1);	/*写真の影。0,0,0は黒の事で、0.3は色が30%ついた状態の事。*/
+    box-shadow: 2px 2px 5px rgba(0,0,0,1);
     position: absolute;
-    background: rgb(0, 0, 0,0.6);	/*背景色。下の「@keyframes photo」でのopacityの指定で出る背景色です。#000(黒)でなく#fff(白)にしておけば白っぽく薄く出ます。*/
-    text-align: center;	/*文字をセンタリング*/
+    background: rgb(0, 0, 0,0.6);	
+    text-align: center;
     transition: 0.2s;
     }
     }
 
-    /*画面幅420px以下の設定　スマホ用　見出しと内容の関係性を縦関係に。
-    ------------------------------------------------------------------------------------------------------------------------------------------------------*/
-    @media screen and (max-width:420px){
+    @media screen and (max-width:700px){
 
     #menubar li {
-    width: clamp(80px, 30vh, 400px);			/*メニュー幅*/
-    animation-fill-mode: both;	/*アニメーションの待機中は最初のキーフレームを、完了後は最後のキーフレームを維持する*/
+    width: clamp(50px, 28vw, 200px);		
+    animation-fill-mode: both;
     animation-timing-function: ease-in-out;
-    border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);	/*写真の縁取り。縁取りの幅、線種、色*/
+    border: clamp(5px, 0.5vw, 8px) solid rgb(255, 255, 255);
     border-style: double;
-    box-shadow: 2px 2px 5px rgba(0,0,0,1);	/*写真の影。0,0,0は黒の事で、0.3は色が30%ついた状態の事。*/
+    box-shadow: 2px 2px 5px rgba(0,0,0,1);
     position: absolute;
-    background: rgb(0, 0, 0,0.6);	/*背景色。下の「@keyframes photo」でのopacityの指定で出る背景色です。#000(黒)でなく#fff(白)にしておけば白っぽく薄く出ます。*/
-    text-align: center;	/*文字をセンタリング*/
+    background: rgb(0, 0, 0,0.6);	
+    text-align: center;
     transition: 0.2s;
     }
-    /*全体の設定
-    ---------------------------------------------------------------------------*/
+    
     body {
-        font-size: 12px;	/*文字サイズ*/
-        line-height: 1.5;	/*行間*/
+        font-size: 12px;	
+        line-height: 1.5;	
     }
 
-    /*inner
-    ---------------------------------------------------------------------------*/
     .inner {
-        padding: 30px 0%;	/*上下、左右へのボックス内の余白*/
+        padding: 30px 0%;
     }
 
-    /*setionが続いた場合の２つ目のsectionへの設定*/
     .contents section + section {
-        margin-top: 20px;	/*上に空けるスペース*/
+        margin-top: 20px;	
     }
 
-    /*テーブル（ta1）
-    ---------------------------------------------------------------------------*/
-    /*ta1設定*/
     .ta1, .ta1 td, .ta1 th {
-        padding: 5px;	/*ボックス内の余白*/
+        padding: 5px;	
     }
-    /*ta1の左側ボックス*/
     .ta1 th {
         width: 100px;
     }
 
-    /*その他
-    ---------------------------------------------------------------------------*/
     .ws,.wl {width: 94%;}
     .big1 {font-size: 16px;}
 
-    
-    /*contents 
-    ---------------------------------------------------------------------------*/
     .contents{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    /*h2見出し*/
     .contents h2 {
         clear: both;
         position: relative;
@@ -573,12 +480,12 @@
         margin-left: 0%;
         margin-right: 0%;
         margin-block-start: 5%;
-        margin-bottom: 0%;	/*下に空けるスペース*/
+        margin-bottom: 0%;
         padding-top: 5%;
-        font-size: clamp(10px, 3vw, 40px);		/*文字サイズ*/
-        text-align: center;		/*文字をセンタリング*/
-        letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
-        line-height: 1.5;		/*行間をデフォルトから少し狭くする*/
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;		
+        letter-spacing: 0.2em;	
+        line-height: 1.5;		
         padding:3vh 0 3vh;
     }
     .contents h2::before, h2::after { 
@@ -599,20 +506,18 @@
     right:10%;
     bottom: 25%;
     }
-    /*h2見出し内のspanタグ。小文字表記部分。*/
     .contents h2 span {
         display: block;
-        font-size: 60%;	/*文字サイズ*/
+        font-size: 60%;	
         letter-spacing: 1px;
     }
-    /*h3見出し*/
     .contents h3 {
         clear: both;
-        margin-bottom: 20px;	/*下に空けるスペース*/
-        font-size: 20px;		/*文字サイズ*/
-        background: url(../images/line1.png) no-repeat center bottom;	/*背景画像（下線）の読み込み（古いブラウザ用）*/
-        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	/*背景画像（下線）の読み込み。幅は100%、高さを2pxにする。*/
-        padding: 0 10px;	/*上下、左右へのブロック内の余白*/
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom;	
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
     }
 
     .inner {
@@ -621,33 +526,27 @@
         margin: 3vw 3vw;
         width: 90vw;
         overflow:visible;
-        max-width: 100vw;	/*コンテンツの最大幅*/
-        padding: 50px 3vw;	/*上下、左右へのボックス内の余白*/
+        max-width: 100vw;	
+        padding: 50px 3vw;	
     }
 
-    /*段落タグ*/
     .contents .inner p {
         padding:3vh 3vh
 
     }
-    /*段落タグが続いた場合の設定*/
     .contents p + p {
         margin-top: -20px;
     }
-    /*setionが続いた場合の２つ目のsectionへの設定*/
     .contents section + section {
-        margin-top: 50px;	/*上に空けるスペース*/
+        margin-top: 50px;	
     }
 
-    /*contents right
-    ---------------------------------------------------------------------------*/
     .contentsr{
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
-    /*h2見出し*/
     .contentsr h2 {
         clear: both;
         position: relative;
@@ -659,11 +558,11 @@
         margin-left: 0%;
         margin-right: 0%;
         margin-block-start: 3%;
-        margin-bottom: 0%;	/*下に空けるスペース*/
-        font-size: clamp(10px, 3vw, 40px);		/*文字サイズ*/
-        text-align: center;		/*文字をセンタリング*/
-        letter-spacing: 0.2em;	/*文字間隔を少し広くとる設定*/
-        line-height: 1.5;		/*行間をデフォルトから少し狭くする*/
+        margin-bottom: 0%;
+        font-size: clamp(10px, 3vw, 40px);		
+        text-align: center;	
+        letter-spacing: 0.2em;
+        line-height: 1.5;		
         padding:3vh 0;
     }
     .contentsr h2::before, h2::after { 
@@ -684,32 +583,27 @@
     right:10%;
     bottom: 25%;
     }
-    /*h2見出し内のspanタグ。小文字表記部分。*/
     .contentsr h2 span {
         display: block;
-        font-size: 60%;	/*文字サイズ*/
+        font-size: 60%;	
         letter-spacing: 1px;
     }
-    /*h3見出し*/
     .contentsr h3 {
         clear: both;
-        margin-bottom: 20px;	/*下に空けるスペース*/
-        font-size: 20px;		/*文字サイズ*/
-        background: url(../images/line1.png) no-repeat center bottom;	/*背景画像（下線）の読み込み（古いブラウザ用）*/
-        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	/*背景画像（下線）の読み込み。幅は100%、高さを2pxにする。*/
-        padding: 0 10px;	/*上下、左右へのブロック内の余白*/
+        margin-bottom: 20px;	
+        font-size: 20px;		
+        background: url(../images/line1.png) no-repeat center bottom / 100% 2px;	
+        padding: 0 10px;	
     }
-    /*段落タグ*/
     .contentsr .inner p {
-        padding: 5vh 10px 0;		/*上、左右、下への余白*/
+        padding: 5vh 10px 0;		
     }
-    /*段落タグが続いた場合の設定*/
     .contentsr p + p {
         margin-top: -20px;
     }
-    /*setionが続いた場合の２つ目のsectionへの設定*/
+   
     .contentsr section + section {
-        margin-top: 50px;	/*上に空けるスペース*/
+        margin-top: 50px;	
     }
     }
 
@@ -749,7 +643,7 @@
 <body>
 <header>
 <h1>
-    <a href="/">Yuki Arai</a>
+    <a href="home.html">Yuki Arai</a>
     <nav >
         <ul>
             <li><a href="#news">Recent events</a></li>
@@ -761,11 +655,11 @@
     </nav>
 </h1>
 <ul id="menubar">
-    <li id="menu1"><a href="#news"><img src="../python関連/images/000021.jpg" alt=""><span>Recent events</span></a></li>
-    <li id="menu2"><a href="#about"><img src="images/000022.jpg" alt=""><span>Profile</span></a></li>
-    <li id="menu3"><a href="#gallery"><img src="images/_4124676.jpg" alt=""><span>Photos</span></a></li>
-    <li id="menu4"><a href="#link"><img src="images/加茂水族館クラゲno1.jpg" alt=""><span>Links</span></a></li>
-    <li id="menu5"><a href="#Thought"><img src="images/_8275036.jpg" alt=""><span>Thought</span></a></li>
+    <li id="menu1"><a href="#news"><img src="https://drive.google.com/uc?id=1nXfFrmRMBl2Ahu3OBn7tn0MDd8T1dWPV" alt=""><span>Recent events</span></a></li>
+    <li id="menu2"><a href="#about"><img src="https://drive.google.com/uc?id=1dIo1o96hQACOxj1A5v38W4G1i97QfuK4" alt=""><span>Profile</span></a></li>
+    <li id="menu3"><a href="#gallery"><img src="https://drive.google.com/uc?id=1TJewiJ-kWJ4oVjVvX7ewgtVVZFB1Db9V" alt=""><span>Photos</span></a></li>
+    <li id="menu4"><a href="#link"><img src="https://drive.google.com/uc?id=1vbxOkgr6tAI1QEIFt6XubKTjk8VwB6BT" alt=""><span>Links</span></a></li>
+    <li id="menu5"><a href="#Thought"><img src="https://drive.google.com/uc?id=1aYFXilfOaHR3eN1WWx5eGjm2B_dSbM2f" alt=""><span>Thought</span></a></li>
 </ul>
 </header>
 
@@ -784,7 +678,7 @@
     <h2>Recent events<span>最近の出来事</span></h2>
     <div class="inner">
         <h3>更新情報</h3>
-        <p>ホームページを作成 (2022/09/15)<br>写真のページに写真を追加 (2022/09/15)<br>スマホに対応 (2022/)</p><br><br>
+        <p>ホームページを作成 (2022/09/15)<br>写真のページに写真を追加 (2022/09/15)<br>スマホに対応 (2022/12/04)<br>スマホ版chromeなどのブラウザだとうまくスマホ表示されない状況 (2022/12/20)</p><br><br>
         <h3>行動履歴</h3>
         <p>青森-十和田湖周辺-へ旅行 (2022/08)<br>中学時代の友人達と河口湖へ (2022/08)<br>大学の友人と栗駒山、飛島へ (2022/09)</p>
      </div>
@@ -809,36 +703,36 @@
     <h2>Photos</h2>
     <div class="items">
     <div class="item">
-      <img src="../python関連/images/000021.jpg">
+      <img src="https://drive.google.com/uc?id=1nXfFrmRMBl2Ahu3OBn7tn0MDd8T1dWPV">
       <h3>函館, 展望台から 2022年3月 日没前</h3>
     </div>
   
     <div class="item">
-        <img src="../python関連/images/山寺の寺.jpg">
+        <img src="https://drive.google.com/uc?id=1fJKUAYrpk01YKYuHclZasb-gu6gexIRs">
         <h3>山形 山寺, 山寺 立石寺 2022年2月</h3>
     </div>
     </div>
 
     <div class="items">
     <div class="item">
-      <img src="../python関連/images/_8264863.jpg">
+      <img src="https://drive.google.com/uc?id=1H785xZ9qj41s-ndxN0vLg1EOSsQGcHK0">
       <h3>青森 十和田, 奥入瀬渓流 2022年8月</h3>
     </div>
   
     <div class="item">
-      <img src="../python関連/images/不忍池弁天堂と屋台.jpg">
+      <img src="https://drive.google.com/uc?id=1Vdp6pM0xmm05zHTxU7bYN_byp-2uw86P">
       <h3>東京 上野, 上野恩賜公園 2022年4月</h3>
     </div>
     </div>
 
     <div class="items">
     <div class="item">
-      <img src="../python関連/images/加茂水族館クラゲno1.jpg">
+      <img src="https://drive.google.com/uc?id=1vbxOkgr6tAI1QEIFt6XubKTjk8VwB6BT">
       <h3>山形 鶴岡, 加茂水族館 2022年3月</h3>
     </div>
   
     <div class="item">
-      <img src="../python関連/images/_8064703.jpg">
+      <img src="https://drive.google.com/uc?id=1E-VBjrQe6Etv3YZTlbf6w282RhgldJd2">
       <h3>仙台, 自宅から 2022年8月 早朝</h3>
     </div>
     </div>
